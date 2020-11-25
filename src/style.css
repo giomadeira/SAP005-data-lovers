@@ -3,6 +3,7 @@
 }
 h1{ 
     text-align: center;
+    color: white; 
 }
 
 h2{ 
@@ -10,10 +11,12 @@ h2{
     color: rgba(115, 187, 86, 0.801);
 }
 
-body{
+html{
     background-image: url(image/back2.jpeg);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: contain;
+    height: 100%;
+    
 
     /*background-size: 100%;
     background-attachment: scroll;
@@ -27,9 +30,6 @@ body{
     font-family: 'Syne Mono', monospace;
     line-height: 1.5;*/
       
-}
-h1{
-   color: white; 
 }
 ul{
     text-align: center;
@@ -48,13 +48,6 @@ footer {
     color: white;
     text-align: center;
     font-size: 12px;
-}
-.cards{
-    width: 350px;
-    height: 200px;
-    border: 1px solid #555;
-    font: 14px Arial;
-    color: lightcoral;
 }
 
 .links{
