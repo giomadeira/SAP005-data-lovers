@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Rick and Morty</title>
-    <link rel="shortcut icon" type="image/x-icon" href="/image/favicon.ico">
     <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="/image/favicon.ico">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab&display=swap" rel="stylesheet">
   </head>
@@ -16,22 +16,73 @@
         <li><a href="https://www.netflix.com/br/title/80014749">Assistir a série</a> • <a href="https://www.rickandmorty.com/">Site Oficial </a></li>
       </ul>
     </nav>
-    <div class="cards">
-      <ul>
-        <li> item1</li>      
-      </ul>
-    </div>
-    <div class="cards">
-      <ul>
-        <li> item2</li>      
-      </ul>
-    </div>
-    <div class="cards">
-      <ul>
-        <li> item3</li>      
-      </ul>
-    </div>
-    <div id="root"></div>
+
+    <form>
+      <label for="name">Nome do personagem:</label> 
+      <input type="search" id="name" name="name" placeholder="Exemplo: Rick Sanchez">
+      <label for="status">Status</label>
+      <select class="select-status" id="status" name="status">
+        <option value="all-status">Todos</option>
+        <option value="alive">Vivo</option>
+        <option value="dead">Morto</option>
+        <option value="unknow-status">Desconhecido</option>
+      </select>
+      <label for="species">Espécie</label>
+      <select class="select-species" id="species" name="species">
+        <option value="all-species">Todos</option>
+        <option value="human">Humano</option>
+        <option value="alien">Alien</option>
+        <option value="humanoid">Humanoide</option>
+        <option value="poopybutthole">Poopybutthole</option>
+        <option value="mytholog">Mitológico</option>
+        <option value="vampire">Vampiro</option>
+        <option value="robot">Robô</option>
+        <option value="cronenberg">Cronenberg</option>
+        <option value="disease">Doença</option>
+        <option value="parasite">Parasita</option>
+        <option value="unknow-species">Desconhecido</option>
+      </select>
+      <label for="gender">Gênero</label>
+      <select class="select-gender" id="gender" name="gender">
+        <option value="all-gender">Todos</option>
+        <option value="female">Feminino</option>
+        <option value="male">Masculino</option>
+        <option value="genderless">Não-binário</option>
+        <option value="unknow-gender">Desconhecido</option>
+      </select>
+      <input type="radio" id="asc-order" name="order" value="asc-order">
+      <label for="asc-order">A - Z</label>
+      <input type="radio" id="desc-order" name="order" value="desc-order">
+      <label for="desc-order">Z - A</label>
+    </form>
+
+
+  
+    
+    <!-- mostrar todos os personagens
+    verificar se as bibliotecas de ícone fazem parte do bootstrap
+  imṕortar link para rodar os ícones-->
+
+    <div class ="background" id="root"></div>
+     <div id = "cards" class = "na-tela">
+     <div class = "nome-card">
+       <h1></h1>
+     </div>
+     <div class= "card-informa">
+       <p><i class="fa fa-circle-o" aria-hidden="true"> Nome: <span id="name"></span></i></p>
+       <p><i class="fa fa-heartbeat" aria-hidden="true"> Status de vida: <span id= "status"></span></i></p>
+       <p><i class="fa fa-star" aria-hidden="true"> Espécie: <span id= "specie"></span></i></p>
+       <p><i class="fa fa-tint" aria-hidden="true">Tipo: <span id= "type"></span></i></p>
+       <p><i class="fa fa-venus-mars" aria-hidden="true"> Gênero: <span id = "gender"></span></i></p>
+       <p><i class="fa fa-grav" aria-hidden="true"> Localização: <span id = "location.name"></span></i></p>
+       <p><i class="fa fa-television" aria-hidden="true"> Episódio em que aparece: <span id= "episode"></span></p>
+        
+      </div>
+
+
+
+
+
     <footer>
       <nav> Made by <a href="http://github.com/dunia07" target="_blank">©DuniaGhazzaoui </a> & <a href="http://github.com/giomadeira" target="_blank"> ©GiovanaMadeira </a> on <a href="http://laboratoria.la" target="_blank">&lt; Laboratoria &gt;</a>
       </nav>
