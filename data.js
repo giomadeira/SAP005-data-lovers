@@ -77,6 +77,23 @@ export const filtroStatus = (rickandmorty) =>{
 
 };
 
+export const ordenacao = (data, order) => {
+  return data.sort((a, b) => {
+    if (order == "asc") {
+            if (a[order] > b[order]) {
+        return 1;
+      } else{
+        return -1;
+      }
+    } else{
+      if (a[order] < b[order]) {
+        return 1;
+      } else{
+        return -1;
+      }
+    }
+  });
+};
 
 
 //const capturarDados = data.rickandmorty;
