@@ -22,5 +22,4 @@ const tipo = document.querySelector("#type");
 const genero = document.querySelector("#gender");
 const localizacao = document.querySelector(".location-name");
 const episodioAparece = document.querySelector("#episode");
-
-
+const ordenacao = document.querySelector("#order");
