@@ -10,24 +10,25 @@
   </head>
   <body>
     <h1><img src="https://fontmeme.com/permalink/201123/53b8d097d367015de6c0a5b7391d0d7c.png" alt="fonte-get-schwifty"></h1>
-    <h2>Portal de pesquisa dos personagens mais ícônicos do universo!</h2>
-    <nav class= "links">
+    <h2>Portal de pesquisa dos personagens mais icônicos do universo!</h2>
+    <nav class="links">
       <ul>
         <li><a href="https://www.netflix.com/br/title/80014749">Assistir a série</a> • <a href="https://www.rickandmorty.com/">Site Oficial </a></li>
       </ul>
     </nav>
-
-    <form>
+    <form class="name-search">
       <label for="name">Nome do personagem:</label> 
       <input type="search" id="name" name="name" placeholder="Exemplo: Rick Sanchez">
-      <label for="status">Status</label>
+    </form>
+    <form class="filter">
+      <label class="status" for="status">Status</label>
       <select class="select-status" id="status" name="status">
         <option value="all-status">Todos</option>
         <option value="alive">Vivo</option>
         <option value="dead">Morto</option>
         <option value="unknow-status">Desconhecido</option>
       </select>
-      <label for="species">Espécie</label>
+      <label class="species" for="species">Espécie</label>
       <select class="select-species" id="species" name="species">
         <option value="all-species">Todos</option>
         <option value="human">Humano</option>
@@ -42,7 +43,7 @@
         <option value="parasite">Parasita</option>
         <option value="unknow-species">Desconhecido</option>
       </select>
-      <label for="gender">Gênero</label>
+      <label class="gender" for="gender">Gênero</label>
       <select class="select-gender" id="gender" name="gender">
         <option value="all-gender">Todos</option>
         <option value="female">Feminino</option>
@@ -50,10 +51,12 @@
         <option value="genderless">Não-binário</option>
         <option value="unknow-gender">Desconhecido</option>
       </select>
-      <input type="radio" id="asc-order" name="order" value="asc-order">
-      <label for="asc-order">A - Z</label>
-      <input type="radio" id="desc-order" name="order" value="desc-order">
-      <label for="desc-order">Z - A</label>
+    </form>
+    <form class="order" id="order">
+      <input type="radio" id="asc" name="order" value="asc">
+      <label for="asc">A - Z</label>
+      <input type="radio" id="desc" name="order" value="desc">
+      <label for="desc">Z - A</label>
     </form>
 
 
@@ -64,27 +67,49 @@
   imṕortar link para rodar os ícones-->
 
     <div class ="background" id="root"></div>
-     <div id = "cards" class = "na-tela">
-     <div class = "nome-card">
-       <h1></h1>
-     </div>
-     <div class= "card-informa">
-       <p><i class="fa fa-circle-o" aria-hidden="true"> Nome: <span id="name"></span></i></p>
-       <p><i class="fa fa-heartbeat" aria-hidden="true"> Status de vida: <span id= "status"></span></i></p>
-       <p><i class="fa fa-star" aria-hidden="true"> Espécie: <span id= "specie"></span></i></p>
-       <p><i class="fa fa-tint" aria-hidden="true">Tipo: <span id= "type"></span></i></p>
-       <p><i class="fa fa-venus-mars" aria-hidden="true"> Gênero: <span id = "gender"></span></i></p>
-       <p><i class="fa fa-grav" aria-hidden="true"> Localização: <span id = "location.name"></span></i></p>
-       <p><i class="fa fa-television" aria-hidden="true"> Episódio em que aparece: <span id= "episode"></span></p>
-        
+      <div id = "cards" class = "na-tela">
+      <div class = "nome-card">
+        <h1></h1>
       </div>
-
-
-
-
-
+      <div class= "card-informa">
+        <p><i class="fa fa-circle-o" aria-hidden="true"> Nome: <span id="name"></span></i></p>
+        <p><i class="fa fa-heartbeat" aria-hidden="true"> Status de vida: <span id= "status"></span></i></p>
+        <p><i class="fa fa-star" aria-hidden="true"> Espécie: <span id= "specie"></span></i></p>
+        <p><i class="fa fa-tint" aria-hidden="true">Tipo: <span id= "type"></span></i></p>
+        <p><i class="fa fa-venus-mars" aria-hidden="true"> Gênero: <span id = "gender"></span></i></p>
+        <p><i class="fa fa-grav" aria-hidden="true"> Localização: <span id = "location.name"></span></i></p>
+        <p><i class="fa fa-television" aria-hidden="true"> Episódio em que aparece: <span id= "episode"></span></p> 
+      </div>
+      <div class= "card-informa">
+        <p><i class="fa fa-circle-o" aria-hidden="true"> Nome: <span id="name"></span></i></p>
+        <p><i class="fa fa-heartbeat" aria-hidden="true"> Status de vida: <span id= "status"></span></i></p>
+        <p><i class="fa fa-star" aria-hidden="true"> Espécie: <span id= "specie"></span></i></p>
+        <p><i class="fa fa-tint" aria-hidden="true">Tipo: <span id= "type"></span></i></p>
+        <p><i class="fa fa-venus-mars" aria-hidden="true"> Gênero: <span id = "gender"></span></i></p>
+        <p><i class="fa fa-grav" aria-hidden="true"> Localização: <span id = "location.name"></span></i></p>
+        <p><i class="fa fa-television" aria-hidden="true"> Episódio em que aparece: <span id= "episode"></span></p> 
+      </div>
+      <div class= "card-informa">
+        <p><i class="fa fa-circle-o" aria-hidden="true"> Nome: <span id="name"></span></i></p>
+        <p><i class="fa fa-heartbeat" aria-hidden="true"> Status de vida: <span id= "status"></span></i></p>
+        <p><i class="fa fa-star" aria-hidden="true"> Espécie: <span id= "specie"></span></i></p>
+        <p><i class="fa fa-tint" aria-hidden="true">Tipo: <span id= "type"></span></i></p>
+        <p><i class="fa fa-venus-mars" aria-hidden="true"> Gênero: <span id = "gender"></span></i></p>
+        <p><i class="fa fa-grav" aria-hidden="true"> Localização: <span id = "location.name"></span></i></p>
+        <p><i class="fa fa-television" aria-hidden="true"> Episódio em que aparece: <span id= "episode"></span></p> 
+      </div>
+      <div class= "card-informa">
+        <p><i class="fa fa-circle-o" aria-hidden="true"> Nome: <span id="name"></span></i></p>
+        <p><i class="fa fa-heartbeat" aria-hidden="true"> Status de vida: <span id= "status"></span></i></p>
+        <p><i class="fa fa-star" aria-hidden="true"> Espécie: <span id= "specie"></span></i></p>
+        <p><i class="fa fa-tint" aria-hidden="true">Tipo: <span id= "type"></span></i></p>
+        <p><i class="fa fa-venus-mars" aria-hidden="true"> Gênero: <span id = "gender"></span></i></p>
+        <p><i class="fa fa-grav" aria-hidden="true"> Localização: <span id = "location.name"></span></i></p>
+        <p><i class="fa fa-television" aria-hidden="true"> Episódio em que aparece: <span id= "episode"></span></p> 
+      </div>
     <footer>
-      <nav> Made by <a href="http://github.com/dunia07" target="_blank">©DuniaGhazzaoui </a> & <a href="http://github.com/giomadeira" target="_blank"> ©GiovanaMadeira </a> on <a href="http://laboratoria.la" target="_blank">&lt; Laboratoria &gt;</a>
+      <nav> 
+        Made by <a href="http://github.com/dunia07" target="_blank">©DuniaGhazzaoui </a> & <a href="http://github.com/giomadeira" target="_blank"> ©GiovanaMadeira </a> on <a href="http://laboratoria.la" target="_blank">&lt; Laboratoria &gt;</a>
       </nav>
     </footer>
     <script src="main.js" type="module"></script>
