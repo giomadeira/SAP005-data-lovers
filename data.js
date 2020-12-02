@@ -12,70 +12,77 @@
 //};
 
 
-export const filtroNome = (rickandmorty) =>{
-  let arrayVazia = [];
+// export const filtroNome = (rickandmorty) =>{
+//   let arrayVazia = [];
 
-  rickandmorty.array.forEach((positionCharacter => {
-   let selectCharacter = (positionCharacter.name.find(
+//   rickandmorty.array.forEach((positionCharacter => {
+//    let selectCharacter = (positionCharacter.name.find(
 
-    (character) => character == name
-    ));
-    if (selectCharacter != undefined){
-      arrayVazia.push(positionCharacter);
-    }
-  }));
-  console.log (arrayVazia)
-    return arrayVazia;
+//     (character) => character == name
+//     ));
+//     if (selectCharacter != undefined){
+//       arrayVazia.push(positionCharacter);
+//     }
+//   }));
+//   console.log (arrayVazia)
+//     return arrayVazia;
 
-};
-export const filtroEspecie = (rickandmorty) =>{
-  let arrayVazia = [];
+// };
+// export const filtroEspecie = (rickandmorty) =>{
+//   let arrayVazia = [];
 
-  rickandmorty.array.forEach((positionCharacter => {
-   let selectCharacter = (positionCharacter.species.find(
+//   rickandmorty.array.forEach((positionCharacter => {
+//    let selectCharacter = (positionCharacter.species.find(
 
-    (character) => character == species
-    ));
-    if (selectCharacter != undefined){
-      arrayVazia.push(positionCharacter);
-    }
-  }));
-  console.log (arrayVazia)
-    return arrayVazia;
+//     (character) => character == species
+//     ));
+//     if (selectCharacter != undefined){
+//       arrayVazia.push(positionCharacter);
+//     }
+//   }));
+//   console.log (arrayVazia)
+//     return arrayVazia;
 
-};
-export const filtroGenero = (rickandmorty) =>{
-  let arrayVazia = [];
+// };
+// export const filtroGenero = (rickandmorty) =>{
+//   let arrayVazia = [];
 
-  rickandmorty.array.forEach((positionCharacter => {
-   let selectCharacter = (positionCharacter.gender.find(
+//   rickandmorty.array.forEach((positionCharacter => {
+//    let selectCharacter = (positionCharacter.gender.find(
 
-    (character) => character == gender
-    ));
-    if (selectCharacter != undefined){
-      arrayVazia.push(positionCharacter);
-    }
-  }));
-  console.log (arrayVazia)
-    return arrayVazia;
+//     (character) => character == gender
+//     ));
+//     if (selectCharacter != undefined){
+//       arrayVazia.push(positionCharacter);
+//     }
+//   }));
+//   console.log (arrayVazia)
+//     return arrayVazia;
 
-};
-export const filtroStatus = (rickandmorty) =>{
-  let arrayVazia = [];
+// };
+// export const filtroStatus = (rickandmorty) =>{
+//   let arrayVazia = [];
 
-  rickandmorty.array.forEach((positionCharacter => {
-   let selectCharacter = (positionCharacter.status.find(
+//   rickandmorty.array.forEach((positionCharacter => {
+//    let selectCharacter = (positionCharacter.status.find(
 
-    (character) => character == status
-    ));
-    if (selectCharacter != undefined){
-      arrayVazia.push(positionCharacter);
-    }
-  }));
-  console.log (arrayVazia)
-    return arrayVazia;
+//     (character) => character == status
+//     ));
+//     if (selectCharacter != undefined){
+//       arrayVazia.push(positionCharacter);
+//     }
+//   }));
+//   console.log (arrayVazia)
+//     return arrayVazia;
 
-};
+// };
+
+export const filterStatus = (data,status) => {
+  function filterStatus (){
+    const filterStatus = data.filter(data => data.status ===filtroSelecaoStatus.value) 
+    return(filterStatus)
+}};
+
 
 export const ordenacao = (data, order) => {
   return data.sort((a, b) => {
