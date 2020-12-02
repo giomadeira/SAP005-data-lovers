@@ -1,10 +1,9 @@
 // toda a interação dos códigos exibidos na tela - dom
 // eventListener ou eventHand
 
-import {filtroNome, filtroEspecie, filtroGenero,filtroStatus} from './data.js';
-import results from './data/rickandmorty/rickandmorty.js';
+// import {filtroNome, filtroEspecie, filtroGenero,filtroStatus} from './data.js';
+// import results from './data/rickandmorty/rickandmorty.js';
 
-console.log(results);
 
 //const nameCharacter = document.querySelector
 //console.log (data)
@@ -13,6 +12,8 @@ console.log(results);
   //  console.log(name)
 //}
 
+import {filterStatus} from './data.js';
+import data from './data/rickandmorty/rickandmorty.js';
 
 //pegar id root da pagina - pesquisar
 const conteudo = document.querySelector("#root")
@@ -36,13 +37,26 @@ const episodioAparece = document.querySelector("#episode");
 const ordenacao = document.querySelector("#order");
 
 
-//function mostrarDados (data){
-  //if(data.lenght !=0){
-    //data.forEach(element => {
-       //let criarDiv = 
-
-
-    //})
-// }
-//}
+function mostrarCards (data) {
+  document.getElementById ("listagem").innerHTML = data.map((elemento) => `
+    <div class="card">
+      <div class="card-informa">
+        <div class="card-frente">
+          <img src="${elemento.image}">
+          <p><strong> Nome: ${elemento.name}</strong></p>
+        </div> 
+        <div class="card-verso">
+          <ul class="info-por-valor">
+          <li> Nome: ${elemento.name}</li>
+          <li> Status de vida: ${elemento.status}</li>
+          <li> Espécie: ${elemento.species}</li>
+          <li> Tipo: ${elemento.type}</li> 
+          <li> Gênero: ${elemento.gender}</li>
+          <li> Localização: ${elemento.location.name}</li>
+        </div>
+      </div>
+    </div>
+  `)
+}
+mostrarCards(data.results);
 
