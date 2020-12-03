@@ -1,48 +1,74 @@
 // toda a interação dos códigos exibidos na tela - dom
 // eventListener ou eventHand
 
-import {filtroNome, filtroEspecie, filtroGenero,filtroStatus} from './data.js';
-import results from './data/rickandmorty/rickandmorty.js';
-
-console.log(results);
-
-//const nameCharacter = document.querySelector
-//console.log (data)
-
-//for (persona of rickandmorty){
-  //  console.log(name)
-//}
+import {filtroGenero,filtroStatus,filtroEspecie,filtroNome} from './data.js';
+import data from './data/rickandmorty/rickandmorty.js';
 
 
-//pegar id root da pagina - pesquisar
-const conteudo = document.querySelector("#root")
-const cards = document.querySelector("#cards");
-//pegar os selecionadores
-const selecaoStatus = document.querySelector("#select-status");
-const selecaoOrdem = document.querySelector(".asc-order");
+//função para limpar cards
 
-//corrigir forma que chama as id de acordo com a api
-
-const imagemPersonagem = document.querySelector("image")
-console.log(imagemPersonagem);
-const nomePersonagem= document.querySelector("#name");
-console.log(nomePersonagem);
-const statusDeVida = document.querySelector("#status");
-const especie = document.querySelector("#specie");
-const tipo = document.querySelector("#type");
-const genero = document.querySelector("#gender");
-const localizacao = document.querySelector(".location-name");
-const episodioAparece = document.querySelector("#episode");
-const ordenacao = document.querySelector("#order");
-
-
-//function mostrarDados (data){
-  //if(data.lenght !=0){
-    //data.forEach(element => {
-       //let criarDiv = 
-
-
-    //})
+// function clearCards() {
+//   document.getElementById("item-all-cards").innerHTML = ""
 // }
-//}
+
+
+//para mostrar cards na tela chamando os elementos direto na função
+function mostrarCards (data) {
+  document.getElementById ("listagem").innerHTML = data.map((elemento) => `
+  <div class= "card-informa">
+  <div class = "card-frente">
+  <img src = "${elemento.image}">
+    <p><strong> Nome: ${elemento.name}</strong></p>
+</div> 
+<div class= "card-verso">
+  <ul class = "info-por-valor">
+  <li> Nome: ${elemento.name}</li>
+  <li> Status de vida: ${elemento.status}</li>
+  <li> Espécie: ${elemento.species}</li>
+  <li> Tipo: ${elemento.type}</li> 
+  <li> Gênero: ${elemento.gender}</li>
+  <li> Localização: ${elemento.location.name} </li>
+</div>
+`)
+}
+mostrarCards(data.results);
+
+
+function apresentaGenero(){
+let seletorGenero=document.getElementById("gender").value;
+// console.log (seletorGenero)
+let generoEscolhido = filtroGenero(data.results,seletorGenero);
+// mostrarCalculo.style.display= "flex";
+// mostrarCalculo.innerHTML=  `Temos ${contagemPorTipo(data.results, "gender", generoSelecionar.value)} personagens neste filtro.`
+return mostrarCards(generoEscolhido);
+}
+mostrarCards(data.results);
+document.getElementById("gender").addEventListener("change", apresentaGenero);
+
+function apresentaStatus(){
+let seletorStatus=document.getElementById("status").value;
+let statusEscolhido = filtroStatus(data.results,seletorStatus);
+return mostrarCards(statusEscolhido);
+}
+mostrarCards(data.results);
+document.getElementById("status").addEventListener("change", apresentaStatus);
+
+function apresentaEspecie(){
+const seletorEspecie=document.getElementById("species").value;
+const especieEscolhido=filtroEspecie(data.results,seletorEspecie);
+return mostrarCards(especieEscolhido);
+}
+mostrarCards(data.results);
+document.getElementById("species").addEventListener("change", apresentaEspecie);
+ 
+
+function apresentaNome(){
+ const seletorNome = document.getElementById("name-search").value;
+ const nomeEscolhido = filtroNome(data.results, seletorNome);
+ return mostrarCards(nomeEscolhido);
+ }
+
+// mostrarCards(data.results);
+// document.getElementById("btn-name").onclick.addEventListener("click",apresentaNome));
+
 
