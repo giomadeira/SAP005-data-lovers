@@ -1,39 +1,115 @@
 * { 
     font-family: 'Roboto Slab', serif;
-    margin: 0;
-    padding:0;
 }
 
-html{
+html {
+    background-color: black;
+    background: url(image/background.png);
     background-size: cover;
-    background: url(image/background.png) fixed;
+    background-attachment: fixed;
 }
 
-form{
+.name-search {
+    color: white;
+    background-color: transparent;
+    font-size: 12px;
+    margin: 5px;
+    padding: 5px;
+    justify-content: center;
+    border: 2px solid  rgba(112, 243, 6, 0.966);
+    border-radius: 5px;
+}
+
+.name-search-btn {
+    color: white;
+    background-color: transparent;
+    font-size: 12px;
+    margin: 5px;
+    padding: 5px;
+    justify-content: center;
+    border: 2px solid  rgba(112, 243, 6, 0.966);
+    border-radius: 5px;
+}
+
+.name-search:focus {
+    width: 200px;
+    outline: none;
+    border-radius: 5px;
+}
+
+.select-status, .select-species, .select-gender {
+    color: white;
+    position: relative;
+    background-color: transparent;
+    font-size: 12px;
+    background-position: center;
+    text-align-last: center;
+    margin: 15px;
+    padding: 5px;
+    flex-flow: row wrap;
+    justify-content: center;
+    border: 2px solid  rgba(112, 243, 6, 0.966);
+    border-radius: 5px;
+}
+
+option {
+    color: black;
+}
+
+.filter {
+    position: relative;
+    font-size: 12px;
+    background-position: center;
+    text-align-last: center;
+    margin: 15px;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.order {
+    position: relative;
+    font-size: 16px;
+    background-position: center;
+    text-align-last: center;
+    margin: 15px;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+#asc {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#desc {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+form {
     color: white;
 }
 
-h1{ 
+h1 { 
     text-align: center;
     color: white; 
 }
 
-h2{ 
+h2 { 
     text-align: center;
     color: rgba(115, 187, 86, 0.801);
 }
 
-ul{
+ul {
     text-align: center;
     list-style-type: none;
     line-height: 2;
     padding-left: 0;
 }
 
-a{
+a {
     color: white;
     text-align: center;
-    display: inline-block;
     line-height: 2.5;
     margin: 0 13px;
 }
@@ -42,34 +118,130 @@ footer {
     color: white;
     text-align: center;
     font-size: 12px;
+    margin: 5px;
 }
 
-.links{
+.links {
     color: white;
     padding: 20px;
 }
 
-.name-search{
-    margin-left: 100px;
-    padding: 10px;
+/* #calculo-por-escolha {
+    color: white;
+    display: none;
+    justify-content: center;
+    font-size: 16px;
+    text-align: center;
+    margin: 2% 30% 2% 30%;
+    background-color: transparent;
+    border: 5px solid  rgba(115, 187, 86, 0.801);
+    border-radius: 9px;
+} */
+
+.listagem {
+    padding-left: 0px;
+    padding-right: 0px;
+    text-align: center;
+    width: 80%;
 }
 
-.status{
-    margin-left: 100px;
-    padding: 10px;
+/* flip do card em 180° 
+:hover = seleciona elementos quando o cursor está em cima dele*/
+.card:hover .card-informa {
+    transform: rotateY(180deg);
 }
 
-.species{
-    margin-left: 100px;
-    padding: 10px;
+.card-informa {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    justify-content: space-evenly;
+    max-width: 1100px;
+    margin: 0 auto;
+} 
+/*paginação: verificar indice + numero de itens por tela*/
+
+.card {
+    background-color: transparent;
+    padding: 15px;
+    display: inline-block;
+    margin-bottom: 15px;
+    width: 300px;
+    height: 350px;
+    border: 5px solid  rgba(115, 187, 86, 0.801);
+    border-radius: 9px;
+    color: white;
+    text-align: center;
+    margin: 30px 5Opx 30px 30px;
+    margin-top: 30px;
 }
 
-.gender{
-    margin-left: 100px;
-    padding: 10px;
+.info-por-valor {
+    list-style: none;
+    padding: 0px;
+    border-radius: 10px;
 }
 
-.order{
-    margin-left: 100px;
-    padding: 10px;
+.card-frente{
+    background-color: #353a34;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 5px;
+}
+
+.card-verso{
+    transform: rotateY(180deg);
+    background-color: #353a34;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 5px;
+}
+
+@media(max-width: 600px) {
+    html{
+        background-color: black;
+        background: url(image/background-android.png);
+        background-attachment: fixed;
+    }
+
+    img{
+        max-width: 100%;
+        height: auto;
+    }
+
+    .actions{
+        display: flex;
+        width: 100%;
+        height: 56px;
+        justify-content: center;
+    }
+    
+    .card-image{
+        width: 183px;
+    }
+
+    .listagem {
+        padding: 0em;  
+    }
+
+    .teste-rolar{
+        text-align: center;
+    }
+
+    footer {
+        max-width: 100%;
+        height: auto;
+        margin: 5px;
+    }
+    
 }

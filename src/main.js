@@ -1,6 +1,7 @@
 // toda a interação dos códigos exibidos na tela - dom
 // eventListener ou eventHand
 
+
 import {filtroGenero,filtroStatus,filtroEspecie,filtroNome} from './data.js';
 import data from './data/rickandmorty/rickandmorty.js';
 
@@ -11,6 +12,8 @@ import data from './data/rickandmorty/rickandmorty.js';
 //   document.getElementById("item-all-cards").innerHTML = ""
 // }
 
+import {filterStatus} from './data.js';
+import data from './data/rickandmorty/rickandmorty.js';
 
 //para mostrar cards na tela chamando os elementos direto na função
 function mostrarCards (data) {
@@ -53,6 +56,7 @@ return mostrarCards(statusEscolhido);
 mostrarCards(data.results);
 document.getElementById("status").addEventListener("change", apresentaStatus);
 
+
 function apresentaEspecie(){
 const seletorEspecie=document.getElementById("species").value;
 const especieEscolhido=filtroEspecie(data.results,seletorEspecie);
@@ -70,5 +74,6 @@ function apresentaNome(){
 
 // mostrarCards(data.results);
 // document.getElementById("btn-name").onclick.addEventListener("click",apresentaNome));
+
 
 
