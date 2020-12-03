@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O universo de Rick and Morty</title>
+    <title>Rick and Morty</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" type="image/x-icon" href="/image/favicon.ico">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -20,11 +20,10 @@
       </ul>
     </header>
     </nav>
-    <main>
-      <input class="name-search" type="search" name="name" placeholder="Pesquisar por nome...">
-      <button id ="btn-nome"> Buscar </button>
-    </main>
-
+  <form class="filter">
+      <input class="name-search" type="search" id="name" name="name" placeholder="Pesquisar por nome...">
+      <button class="name-search-btn" type="button" value="Buscar">Buscar</button>
+    </form>
     <form class="filter">
       <label class="select-status" for="status">Status</label>
       <select class="select-status" id="status">
@@ -56,6 +55,7 @@
         <option class="select-gender" value="Male">Masculino</option>
         <option class="select-gender" value="Genderless">Não-binário</option>
         <option class="select-gender" value="unknown">Desconhecido</option>
+
       </select>
     </form>
     <form class="order" id="order">
@@ -64,14 +64,11 @@
       <input type="radio" id="desc" name="order" value="desc">
       <label for="desc">Z - A</label>
     </form>
-   
 
-     <main class = "teste-rolar">
-       <div id= "calculo-por-escolha"></div>
-       <div id="listagem"></div>
-     </main>
-
-
+    <main class= "teste-rolar">
+      <div id= "calculo-por-escolha"></div>
+      <section class="listagem" id="listagem"></section>
+    </main>
     <footer>
       <nav> 
         Made by <a href="http://github.com/dunia07" target="_blank">©DuniaGhazzaoui </a> & <a href="http://github.com/giomadeira" target="_blank"> ©GiovanaMadeira </a> on <a href="http://laboratoria.la" target="_blank">&lt; Laboratoria &gt;</a>
