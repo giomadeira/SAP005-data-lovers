@@ -11,47 +11,51 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <body>
+    <header>
     <h1><img src="https://fontmeme.com/permalink/201123/53b8d097d367015de6c0a5b7391d0d7c.png" alt="fonte-get-schwifty"></h1>
     <h2>Portal de pesquisa dos personagens mais icônicos do universo!</h2>
     <nav class="links">
       <ul>
         <li><a href="https://www.netflix.com/br/title/80014749">Assistir a série</a> • <a href="https://www.rickandmorty.com/">Site Oficial </a></li>
       </ul>
+    </header>
     </nav>
-    <form class="filter">
+  <form class="filter">
       <input class="name-search" type="search" id="name" name="name" placeholder="Pesquisar por nome...">
-      <button class="name-search-btn" type="button" value="Buscar" onclick="nome-da-função">Buscar</button>
+      <button class="name-search-btn" type="button" value="Buscar">Buscar</button>
     </form>
     <form class="filter">
-      <select class="select-status" id="status" name="status">
-        <option value="status" selected disabled>Status</option>
-        <option value="all-status">Todos</option>
-        <option value="alive">Vivo</option>
-        <option value="dead">Morto</option>
-        <option value="unknow-status">Desconhecido</option>
+      <label class="select-status" for="status">Status</label>
+      <select class="select-status" id="status">
+        <option class="select-status" value="all-status">Todos</option>
+        <option class="select-status"  value="Alive">Vivo</option>
+        <option class="select-status" value="Dead">Morto</option>
+        <option class="select-status" value="unknown">Desconhecido</option>
       </select>
-      <select class="select-species" id="species" name="species">
-        <option value="species" selected disabled>Espécie</option>
-        <option value="all-species">Todos</option>
-        <option value="human">Humano</option>
-        <option value="alien">Alien</option>
-        <option value="humanoid">Humanoide</option>
-        <option value="poopybutthole">Poopybutthole</option>
-        <option value="mytholog">Mitológico</option>
-        <option value="vampire">Vampiro</option>
-        <option value="robot">Robô</option>
-        <option value="cronenberg">Cronenberg</option>
-        <option value="disease">Doença</option>
-        <option value="parasite">Parasita</option>
-        <option value="unknow-species">Desconhecido</option>
+      <label class="select-species"for="species">Espécie</label>
+      <select class="select-species" id="species" >
+        <option class="select-species">Todos</option>
+        <option class="select-species" value="Human">Humano</option>
+        <option class="select-species" value="Alien">Alien</option>
+        <option class="select-species" value="Humanoid">Humanoide</option>
+        <option class="select-species" value="Poopybutthole">Poopybutthole</option>
+        <option class="select-species" value="Mytholog">Mitológico</option>
+        <option class="select-species" value="Vampire">Vampiro</option>
+        <option class="select-species" value="Robot">Robô</option>
+        <option class="select-species" value="Cronenberg">Cronenberg</option>
+        <option class="select-species" value="Disease">Doença</option>
+        <option class="select-species" value="Parasite">Parasita</option>
+        <option class="select-species" value="unknown">Desconhecido</option>
       </select>
-      <select class="select-gender" id="gender" name="gender">
-        <option value="gender" selected disabled>Gênero</option>
-        <option value="all-gender">Todos</option>
-        <option value="female">Feminino</option>
-        <option value="male">Masculino</option>
-        <option value="genderless">Não-binário</option>
-        <option value="unknow-gender">Desconhecido</option>
+
+      <label class="select-gender" for="gender">Gênero</label>
+      <select class="select-gender" id="gender">
+       <option class="select-gender">Todos</option>
+        <option class="select-gender" value="Female">Feminino</option>
+        <option class="select-gender" value="Male">Masculino</option>
+        <option class="select-gender" value="Genderless">Não-binário</option>
+        <option class="select-gender" value="unknown">Desconhecido</option>
+
       </select>
     </form>
     <form class="order" id="order">
@@ -60,37 +64,18 @@
       <input type="radio" id="desc" name="order" value="desc">
       <label for="desc">Z - A</label>
     </form>
+
     <main class= "teste-rolar">
       <div id= "calculo-por-escolha"></div>
       <section class="listagem" id="listagem"></section>
     </main>
-
-    
-    <!-- mostrar todos os personagens
-    verificar se as bibliotecas de ícone fazem parte do bootstrap
-  imṕortar link para rodar os ícones-->
-
-    <!--<div class ="background" id="root"></div>
-
-     <div id = "cards" class = "na-tela">
-     <div class = "nome-card">
-       <h1></h1>
-     </div>
-     <div class= "card-informa">
-       <p> Nome: <span id="name"></span></p>
-       <p> Status de vida: <span id= "status"></span></p>
-       <p> Espécie: <span id= "specie"></span></p>
-       <p>Tipo: <span id= "type"></span></p>
-       <p> Gênero: <span id = "gender"></span></p>
-       <p>Localização: <span id = "location.name"></span></p>
-       <p> Episódio em que aparece: <span id= "episode"></span></p>
-     </div>-->
     <footer>
       <nav> 
         Made by <a href="http://github.com/dunia07" target="_blank">©DuniaGhazzaoui </a> & <a href="http://github.com/giomadeira" target="_blank"> ©GiovanaMadeira </a> on <a href="http://laboratoria.la" target="_blank">&lt; Laboratoria &gt;</a>
       </nav>
     </footer>
+ 
     <script src="main.js" type="module"></script>
-    <script src="https://kit.fontawesome.com/29d9b95ced.js" crossorigin="anonymous"></script>
+  
   </body>
 </html>
