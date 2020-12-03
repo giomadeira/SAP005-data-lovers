@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Rick and Morty</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" type="image/x-icon" href="/image/favicon.ico">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -17,20 +18,20 @@
         <li><a href="https://www.netflix.com/br/title/80014749">Assistir a série</a> • <a href="https://www.rickandmorty.com/">Site Oficial </a></li>
       </ul>
     </nav>
-    <form class="name-search">
-      <label for="name">Nome do personagem:</label> 
-      <input type="search" id="name" name="name" placeholder="Exemplo: Rick Sanchez">
+    <form class="filter">
+      <input class="name-search" type="search" id="name" name="name" placeholder="Pesquisar por nome...">
+      <button class="name-search-btn" type="button" value="Buscar" onclick="nome-da-função">Buscar</button>
     </form>
     <form class="filter">
-      <label class="status" for="status">Status</label>
       <select class="select-status" id="status" name="status">
+        <option value="status" selected disabled>Status</option>
         <option value="all-status">Todos</option>
         <option value="alive">Vivo</option>
         <option value="dead">Morto</option>
         <option value="unknow-status">Desconhecido</option>
       </select>
-      <label class="species" for="species">Espécie</label>
       <select class="select-species" id="species" name="species">
+        <option value="species" selected disabled>Espécie</option>
         <option value="all-species">Todos</option>
         <option value="human">Humano</option>
         <option value="alien">Alien</option>
@@ -44,8 +45,8 @@
         <option value="parasite">Parasita</option>
         <option value="unknow-species">Desconhecido</option>
       </select>
-      <label class="gender" for="gender">Gênero</label>
       <select class="select-gender" id="gender" name="gender">
+        <option value="gender" selected disabled>Gênero</option>
         <option value="all-gender">Todos</option>
         <option value="female">Feminino</option>
         <option value="male">Masculino</option>
@@ -59,13 +60,17 @@
       <input type="radio" id="desc" name="order" value="desc">
       <label for="desc">Z - A</label>
     </form>
+    <main class= "teste-rolar">
+      <div id= "calculo-por-escolha"></div>
+      <section class="listagem" id="listagem"></section>
+    </main>
 
     
     <!-- mostrar todos os personagens
     verificar se as bibliotecas de ícone fazem parte do bootstrap
   imṕortar link para rodar os ícones-->
 
-    <div class ="background" id="root"></div>
+    <!--<div class ="background" id="root"></div>
 
      <div id = "cards" class = "na-tela">
      <div class = "nome-card">
@@ -79,7 +84,7 @@
        <p> Gênero: <span id = "gender"></span></p>
        <p>Localização: <span id = "location.name"></span></p>
        <p> Episódio em que aparece: <span id= "episode"></span></p>
-     </div>
+     </div>-->
     <footer>
       <nav> 
         Made by <a href="http://github.com/dunia07" target="_blank">©DuniaGhazzaoui </a> & <a href="http://github.com/giomadeira" target="_blank"> ©GiovanaMadeira </a> on <a href="http://laboratoria.la" target="_blank">&lt; Laboratoria &gt;</a>
