@@ -12,9 +12,6 @@ import data from './data/rickandmorty/rickandmorty.js';
 //   document.getElementById("item-all-cards").innerHTML = ""
 // }
 
-import {filterStatus} from './data.js';
-import data from './data/rickandmorty/rickandmorty.js';
-
 //para mostrar cards na tela chamando os elementos direto na função
 function mostrarCards (data) {
   document.getElementById ("listagem").innerHTML = data.map((elemento) => `
@@ -39,7 +36,6 @@ mostrarCards(data.results);
 
 function apresentaGenero(){
 let seletorGenero=document.getElementById("gender").value;
-// console.log (seletorGenero)
 let generoEscolhido = filtroGenero(data.results,seletorGenero);
 // mostrarCalculo.style.display= "flex";
 // mostrarCalculo.innerHTML=  `Temos ${contagemPorTipo(data.results, "gender", generoSelecionar.value)} personagens neste filtro.`
