@@ -54,7 +54,7 @@ Com isto, criamos nosso prótipo, entendendo que nosso usuário gostaria de obte
 
 ![imagem](images-readme/telas/versaoFinal.jpeg)
 
-## 3. Demostrações da aplicação
+## 3. Demonstrações da aplicação
 
 Tirando nosso protótipo do papel para a tela, utilizamos o mesmo modelo de fonte da série para o logo da nossa aplicação. Utilizamos cores para os botões que fazem referência à série. Nosso background contém os dois personagens mais relevantes, para que o usuário se sinta realmente dentro deste universo, conhecendo melhor as características de cada um dos 493 personagens.
 
