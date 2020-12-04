@@ -9,6 +9,7 @@ export const filtroStatus = (data, userText) => {
 export const filtroEspecie = (data, userText) => {
   const filterEspecie = data.filter(index => index.species.includes(userText))
   return (filterEspecie)
+};
 
 export const filtroGenero = (data, userText) => {
   const filterGenero = data.filter(index => index.gender.includes(userText))
