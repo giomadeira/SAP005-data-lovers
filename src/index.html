@@ -20,20 +20,20 @@
       </ul>
     </header>
     </nav>
-  <form class="filter">
+    <form class="filter">
       <input class="name-search" type="search" id="name" name="name" placeholder="Pesquisar por nome...">
       <button class="name-search-btn" type="button" id ="btn-name" value="Buscar">Buscar</button>
     </form>
     <form class="filter">
-      <label class="select-status" for="status">Status</label>
       <select class="select-status" id="status">
+        <option class="select-status" value="status" selected disabled>Status</option>
         <option class="select-status" value="all-status">Todos</option>
         <option class="select-status"  value="Alive">Vivo</option>
         <option class="select-status" value="Dead">Morto</option>
         <option class="select-status" value="unknown">Desconhecido</option>
       </select>
-      <label class="select-species"for="species">Espécie</label>
       <select class="select-species" id="species" >
+        <option class="select-species" value="species" selected disabled>Espécie</option>
         <option class="select-species" value= "all-species">Todos</option>
         <option class="select-species" value="Human">Humano</option>
         <option class="select-species" value="Alien">Alien</option>
@@ -47,15 +47,13 @@
         <option class="select-species" value="Parasite">Parasita</option>
         <option class="select-species" value="unknown">Desconhecido</option>
       </select>
-
-      <label class="select-gender" for="gender">Gênero</label>
       <select class="select-gender" id="gender">
-       <option class="select-gender" value= "all-gender">Todos</option>
+        <option class="select-gender" value="gender" selected disabled>Gênero</option>
+        <option class="select-gender" value= "all-gender">Todos</option>
         <option class="select-gender" value="Female">Feminino</option>
         <option class="select-gender" value="Male">Masculino</option>
         <option class="select-gender" value="Genderless">Não-binário</option>
         <option class="select-gender" value="unknown">Desconhecido</option>
-
       </select>
     </form>
     <form class="order" id="order">
@@ -64,7 +62,6 @@
       <input type="radio" id="desc" name="order" value="desc">
       <label for="desc">Z - A</label>
     </form>
-
     <main class= "teste-rolar">
       <div id= "calculo-por-escolha"></div>
       <section class="listagem" id="listagem"></section>
@@ -74,8 +71,6 @@
         Made by <a href="http://github.com/dunia07" target="_blank">©DuniaGhazzaoui </a> & <a href="http://github.com/giomadeira" target="_blank"> ©GiovanaMadeira </a> on <a href="http://laboratoria.la" target="_blank">&lt; Laboratoria &gt;</a>
       </nav>
     </footer>
- 
     <script src="main.js" type="module"></script>
-  
   </body>
 </html>
