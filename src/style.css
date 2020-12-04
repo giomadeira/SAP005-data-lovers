@@ -4,7 +4,7 @@
 
 html {
     background-color: black;
-    background: url(image/background.png);
+    background: url(image/background.png); 
     background-size: cover;
     background-attachment: fixed;
 }
@@ -37,7 +37,7 @@ html {
     border-radius: 5px;
 }
 
-.select-status, .select-species, .select-gender {
+#status, #species, #gender {
     color: white;
     position: relative;
     background-color: transparent;
@@ -52,7 +52,7 @@ html {
     border-radius: 5px;
 }
 
-option {
+.select-status, .select-species, .select-gender {
     color: black;
 }
 
@@ -95,7 +95,7 @@ h1 {
     color: white; 
 }
 
-h2 { 
+h3 { 
     text-align: center;
     color: rgba(115, 187, 86, 0.801);
 }

@@ -1,75 +1,87 @@
-// toda a interação dos códigos exibidos na tela - dom
-// eventListener ou eventHand
-
-
-import {filtroGenero,filtroStatus,filtroEspecie,filtroNome} from './data.js';
+import {filtroNome,filtroStatus,filtroEspecie,filtroGenero} from './data.js';
 import data from './data/rickandmorty/rickandmorty.js';
 
-
-//função para limpar cards
-
-// function clearCards() {
-//   document.getElementById("item-all-cards").innerHTML = ""
-// }
-
-//para mostrar cards na tela chamando os elementos direto na função
-function mostrarCards (data) {
-  document.getElementById ("listagem").innerHTML = data.map((elemento) => `
-  <div class= "card-informa">
-  <div class = "card-frente">
-  <img src = "${elemento.image}">
-    <p><strong> Nome: ${elemento.name}</strong></p>
-</div> 
-<div class= "card-verso">
-  <ul class = "info-por-valor">
-  <li> Nome: ${elemento.name}</li>
-  <li> Status de vida: ${elemento.status}</li>
-  <li> Espécie: ${elemento.species}</li>
-  <li> Tipo: ${elemento.type}</li> 
-  <li> Gênero: ${elemento.gender}</li>
-  <li> Localização: ${elemento.location.name} </li>
-</div>
-`)
+function mostrarCards(data) {
+  let personagem = "";
+  for (let elemento of data) {
+    personagem += `
+      <div class="card"> 
+        <div class="card-informa">
+          <div class="card-frente">
+            <img src="${elemento.image}">
+            <p><strong> Nome: ${elemento.name}</strong></p>
+          </div> 
+          <div class="card-verso">
+            <ul class="info-por-valor">
+            <li> Nome: ${elemento.name}</li>
+            <li> Status de vida: ${elemento.status}</li>
+            <li> Espécie: ${elemento.species}</li>
+            <li> Tipo: ${elemento.type}</li> 
+            <li> Gênero: ${elemento.gender}</li>
+            <li> Localização: ${elemento.location.name}</li>
+          </div>
+        </div>
+      </div>
+    `
+  }
+  return document.getElementById("listagem").innerHTML = personagem
 }
 mostrarCards(data.results);
 
+let mostrarCalculo = document.getElementById("calculo-por-escolha");
 
-function apresentaGenero(){
-let seletorGenero=document.getElementById("gender").value;
-let generoEscolhido = filtroGenero(data.results,seletorGenero);
-// mostrarCalculo.style.display= "flex";
-// mostrarCalculo.innerHTML=  `Temos ${contagemPorTipo(data.results, "gender", generoSelecionar.value)} personagens neste filtro.`
-return mostrarCards(generoEscolhido);
+
+function apresentaNome() {
+  const seletorNome = document.getElementById("name").value;
+  const nomeEscolhido = filtroNome(data.results, seletorNome);
+  return mostrarCards(nomeEscolhido);
 }
 mostrarCards(data.results);
-document.getElementById("gender").addEventListener("change", apresentaGenero);
+document.getElementById("btn-name").addEventListener("click", apresentaNome);
 
-function apresentaStatus(){
-let seletorStatus=document.getElementById("status").value;
-let statusEscolhido = filtroStatus(data.results,seletorStatus);
-return mostrarCards(statusEscolhido);
+function apresentaStatus() {
+  let seletorStatus = document.getElementById("status").value;
+  let statusEscolhido = ""
+  if (seletorStatus == "all-status") {
+    return mostrarCards(data.results);
+  } else {
+    statusEscolhido = filtroStatus(data.results, seletorStatus);
+  }
+  return mostrarCards(statusEscolhido);
 }
-mostrarCards(data.results);
 document.getElementById("status").addEventListener("change", apresentaStatus);
+// let resultadoStatus = contaStatus(data.results,filtroStatus);
+// console.log (resultadoStatus)
+// mostrarCalculo.innerHTML= `Temos ${contaStatus(resultadoStatus)} % personagens dentro desta categoria`  
+// console.log (mostrarCalculo)
 
 
-function apresentaEspecie(){
-const seletorEspecie=document.getElementById("species").value;
-const especieEscolhido=filtroEspecie(data.results,seletorEspecie);
-return mostrarCards(especieEscolhido);
+
+function apresentaEspecie() {
+  let seletorEspecie = document.getElementById("species").value;
+  let especieEscolhido = ""
+  if (seletorEspecie == "all-species") {
+    return mostrarCards(data.results);
+  } else {
+    especieEscolhido = filtroEspecie(data.results, seletorEspecie);
+  }
+  return mostrarCards(especieEscolhido);
 }
-mostrarCards(data.results);
 document.getElementById("species").addEventListener("change", apresentaEspecie);
- 
+// mostrarCalculo.innerHTML= `Temos ${contagemPorTipo(data.results, "species", seletorEspecie.value)} personagens dentro desta categoria`
 
-function apresentaNome(){
- const seletorNome = document.getElementById("name-search").value;
- const nomeEscolhido = filtroNome(data.results, seletorNome);
- return mostrarCards(nomeEscolhido);
- }
-
-// mostrarCards(data.results);
-// document.getElementById("btn-name").onclick.addEventListener("click",apresentaNome));
+function apresentaGenero() {
+  let seletorGenero = document.getElementById("gender").value;
+  let generoEscolhido = ""
+  if (seletorGenero == "all-gender") {
+    return mostrarCards(data.results);
+  } else {
+    generoEscolhido = filtroGenero(data.results, seletorGenero);
+  }
+  return mostrarCards(generoEscolhido)
+};
+// mostrarCalculo.innerHTML= `Temos ${contagemPorTipo(data.results, "gender", generoEscolhido.value)} personagens dentro desta categoria.`
+document.getElementById("gender").addEventListener("change", apresentaGenero);
 
 
 
