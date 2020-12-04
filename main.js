@@ -28,14 +28,14 @@ function mostrarCards(data) {
 }
 mostrarCards(data.results);
 
-let mostrarCalculo = document.getElementById("calculo-por-escolha");
-
+// let mostrarCalculo = document.getElementById("calculo-por-escolha");
 
 function apresentaNome() {
   const seletorNome = document.getElementById("name").value;
   const nomeEscolhido = filtroNome(data.results, seletorNome);
   return mostrarCards(nomeEscolhido);
 }
+
 mostrarCards(data.results);
 document.getElementById("btn-name").addEventListener("click", apresentaNome);
 
@@ -50,12 +50,11 @@ function apresentaStatus() {
   return mostrarCards(statusEscolhido);
 }
 document.getElementById("status").addEventListener("change", apresentaStatus);
+
 // let resultadoStatus = contaStatus(data.results,filtroStatus);
 // console.log (resultadoStatus)
 // mostrarCalculo.innerHTML= `Temos ${contaStatus(resultadoStatus)} % personagens dentro desta categoria`  
 // console.log (mostrarCalculo)
-
-
 
 function apresentaEspecie() {
   let seletorEspecie = document.getElementById("species").value;
@@ -80,8 +79,8 @@ function apresentaGenero() {
   }
   return mostrarCards(generoEscolhido)
 };
-// mostrarCalculo.innerHTML= `Temos ${contagemPorTipo(data.results, "gender", generoEscolhido.value)} personagens dentro desta categoria.`
 document.getElementById("gender").addEventListener("change", apresentaGenero);
+// mostrarCalculo.innerHTML= `Temos ${contagemPorTipo(data.results, "gender", generoEscolhido.value)} personagens dentro desta categoria.`
 
 
 
