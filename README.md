@@ -70,7 +70,9 @@ Tirando nosso protótipo do papel para a tela, utilizamos o mesmo modelo de font
 *Versão mobile:*
 
 ![imagem](images-readme/telas/tela3.jpeg)
+.
 ![images](images-readme/telas/card.jpeg)
+.
 ![images](images-readme/telas/card1.jpeg)
 
 
