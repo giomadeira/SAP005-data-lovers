@@ -14,7 +14,7 @@ import data from './data/rickandmorty/rickandmorty.js';
 
 // para mostrar cards na tela chamando os elementos direto na função
 function mostrarCards(data) {
-  document.getElementById("listagem").innerHTML=data.map((elemento) => `
+  document.getElementById("listagem").innerHTML = data.map((elemento) => `
     <div class="card"> 
       <div class="card-informa">
         <div class="card-frente">
@@ -38,9 +38,9 @@ mostrarCards(data.results);
 
 
 function apresentaGenero() {
-  let seletorGenero=document.getElementById("gender").value;
+  let seletorGenero = document.getElementById("gender").value;
   // console.log (seletorGenero)
-  let generoEscolhido=filtroGenero(data.results,seletorGenero);
+  let generoEscolhido = filtroGenero(data.results,seletorGenero);
   // mostrarCalculo.style.display= "flex";
   // mostrarCalculo.innerHTML=  `Temos ${contagemPorTipo(data.results, "gender", generoSelecionar.value)} personagens neste filtro.`
   return mostrarCards(generoEscolhido);
@@ -50,8 +50,8 @@ mostrarCards(data.results);
 document.getElementById("gender").addEventListener("change", apresentaGenero);
 
 function apresentaStatus() {
-  let seletorStatus=document.getElementById("status").value;
-  let statusEscolhido=filtroStatus(data.results,seletorStatus);
+  let seletorStatus = document.getElementById("status").value;
+  let statusEscolhido = filtroStatus(data.results,seletorStatus);
   return mostrarCards(statusEscolhido);
 }
 
@@ -60,8 +60,8 @@ document.getElementById("status").addEventListener("change", apresentaStatus);
 
 
 function apresentaEspecie() {
-  const seletorEspecie=document.getElementById("species").value;
-  const especieEscolhido=filtroEspecie(data.results,seletorEspecie);
+  const seletorEspecie = document.getElementById("species").value;
+  const especieEscolhido = filtroEspecie(data.results,seletorEspecie);
   return mostrarCards(especieEscolhido);
 }
 
@@ -70,8 +70,8 @@ document.getElementById("species").addEventListener("change", apresentaEspecie);
  
 
 function apresentaNome() {
-  const seletorNome=document.getElementById("name-search").value;
-  const nomeEscolhido=filtroNome(data.results, seletorNome);
+  const seletorNome = document.getElementById("name-search").value;
+  const nomeEscolhido = filtroNome(data.results, seletorNome);
   return mostrarCards(nomeEscolhido);
 }
 
@@ -79,4 +79,24 @@ function apresentaNome() {
 // document.getElementById("btn-name").onclick.addEventListener("click",apresentaNome));
 
 
+function ordenacao() {
+  const seletorOrdem = document.querySelector("input[name=order]:checked").value;
+  //quero pegar input, com name=order, que esteja selecionado
+
+  if (seletorOrdem === "asc") {
+    data.results.sort(function (a, b) {
+      if (a.name.toUpperCase() < b.name.toUpperCase()) return -1;
+      if (a.name.toUpperCase() > b.name.toUpperCase()) return 1;
+      return 0;
+    })
+  } else {
+    data.results.sort(function (a, b) {
+      if (a.name.toUpperCase() > b.name.toUpperCase()) return -1;
+      if (a.name.toUpperCase() < b.name.toUpperCase()) return 1;
+      return 0;
+    })
+  };
+  mostrarCards(data.results);
+}
+document.querySelector("#order").addEventListener("change", ordenacao);
 
