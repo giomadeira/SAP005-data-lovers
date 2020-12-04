@@ -77,7 +77,7 @@ function apresentaGenero() {
     generoEscolhido = filtroGenero(data.results, seletorGenero);
   }
   return mostrarCards(generoEscolhido)
-};
+}
 document.getElementById("gender").addEventListener("change", apresentaGenero);
 // mostrarCalculo.innerHTML= `Temos ${contagemPorTipo(data.results, "gender", generoEscolhido.value)} personagens dentro desta categoria.`
 
@@ -97,7 +97,7 @@ function ordenacao() {
       if (a.name.toUpperCase() < b.name.toUpperCase()) return 1;
       return 0;
     })
-  };
+  }
   mostrarCards(data.results);
 }
 document.querySelector("#order").addEventListener("change", ordenacao);
