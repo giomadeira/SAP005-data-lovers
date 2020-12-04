@@ -15,7 +15,6 @@ export const filtroGenero = (data, userText) => {
   return (filterGenero)
 };  
 
-
 //  export const contaStatus = (data,statusEscolhido) =>
 //  parseFloat((statusEscolhido.length * 100)/(data.length).toFixed(2));
 

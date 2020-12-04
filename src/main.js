@@ -35,7 +35,6 @@ function apresentaNome() {
   const nomeEscolhido = filtroNome(data.results, seletorNome);
   return mostrarCards(nomeEscolhido);
 }
-
 mostrarCards(data.results);
 document.getElementById("btn-name").addEventListener("click", apresentaNome);
 
@@ -82,5 +81,24 @@ function apresentaGenero() {
 document.getElementById("gender").addEventListener("change", apresentaGenero);
 // mostrarCalculo.innerHTML= `Temos ${contagemPorTipo(data.results, "gender", generoEscolhido.value)} personagens dentro desta categoria.`
 
+function ordenacao() {
+  const seletorOrdem = document.querySelector("input[name=order]:checked").value;
+  //quero pegar input, com name=order, que esteja selecionado
 
+  if (seletorOrdem === "asc") {
+    data.results.sort(function (a, b) {
+      if (a.name.toUpperCase() < b.name.toUpperCase()) return -1;
+      if (a.name.toUpperCase() > b.name.toUpperCase()) return 1;
+      return 0;
+    })
+  } else {
+    data.results.sort(function (a, b) {
+      if (a.name.toUpperCase() > b.name.toUpperCase()) return -1;
+      if (a.name.toUpperCase() < b.name.toUpperCase()) return 1;
+      return 0;
+    })
+  };
+  mostrarCards(data.results);
+}
+document.querySelector("#order").addEventListener("change", ordenacao);
 
