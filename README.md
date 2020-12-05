@@ -6,7 +6,7 @@
 
 * [2. Sobre o projeto](#2-sobre-o-projeto)
   
-* [3. Demostrações da aplicação](#3-demonstrações-da-aplicação)
+* [3. Demonstrações da aplicação](#3-demonstrações-da-aplicação)
 * [4. Tecnologias utilizadas](#4-tecnologias-utilizadas)
 * [5. Considerações finais](#5-consideracoes-finais)
 
