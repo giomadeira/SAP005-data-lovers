@@ -1,4 +1,4 @@
-# <h1><img src="https://fontmeme.com/permalink/201123/53b8d097d367015de6c0a5b7391d0d7c.png" alt="fonte-get-schwifty"></h1>
+# <img src="https://fontmeme.com/permalink/201123/53b8d097d367015de6c0a5b7391d0d7c.png" alt="fonte-get-schwifty">
 
 ## Índice 
 
